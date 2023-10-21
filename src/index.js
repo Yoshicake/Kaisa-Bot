@@ -38,9 +38,16 @@ client.on("interactionCreate", (interaction) => {
         interaction.reply("Are you the hunter... or the prey?");
     }
     if (interaction.commandName == "build") {
-        const champ = interaction.options.get('champion').value;
+        let champ = interaction.options.get('champion').value;
+        champ = champ.split(" ").join("");
         interaction.reply("https://u.gg/lol/champions/" + champ + "/build");
         console.log(champ);
+    }
+    if (interaction.commandName == "track") {
+        let summoner = interaction.options.get('username').value;
+        summoner = summoner.split(" ").join("%20");
+        interaction.reply("https://tracker.gg/lol/profile/riot/NA/" + summoner + "/");
+        console.log(summoner);
     }
     console.log(interaction.commandName);
 });

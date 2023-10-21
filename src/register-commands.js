@@ -16,7 +16,19 @@ const commands = [
         options: [
             {
                 name: 'champion',
-                description: 'Name of champion you want to search up.',
+                description: 'Name of champion you want to search up. All lowercase and no spaces.',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            },
+        ],
+    },
+    { 
+        name: 'track',
+        description: 'Sends a link to a user\'s tracker.gg profile. NA only.',
+        options: [
+            {
+                name: 'username',
+                description: 'User you want to search up.',
                 type: ApplicationCommandOptionType.String,
                 required: true,
             },
