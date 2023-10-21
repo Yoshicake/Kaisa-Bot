@@ -32,10 +32,15 @@ client.on("interactionCreate", (interaction) => {
         return;
     }
     if (interaction.commandName =="hey") {
-        interaction.reply("hey!");
+        interaction.reply("Hey!");
     }
     if (interaction.commandName == "selected") {
         interaction.reply("Are you the hunter... or the prey?");
+    }
+    if (interaction.commandName == "build") {
+        const champ = interaction.options.get('champion').value;
+        interaction.reply("https://u.gg/lol/champions/" + champ + "/build");
+        console.log(champ);
     }
     console.log(interaction.commandName);
 });

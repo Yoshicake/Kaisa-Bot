@@ -1,5 +1,5 @@
 require('dotenv').config();
-const {REST , Routes} = require("discord.js");
+const {REST , Routes, ApplicationCommandOptionType} = require("discord.js");
 
 const commands = [
     {
@@ -8,9 +8,21 @@ const commands = [
     },
     { 
         name: 'selected',
-        description: 'Replies with a Kaisa quote.'
-    }
-]
+        description: 'Replies with her character select quote.'
+    },
+    { 
+        name: 'build',
+        description: 'Sends a link to a champ\'s builds.',
+        options: [
+            {
+                name: 'champion',
+                description: 'Name of champion you want to search up.',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            },
+        ],
+    },
+];
 
 const rest = new REST({Version: '10'}).setToken(process.env.TOKEN);
 
