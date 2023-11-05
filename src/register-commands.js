@@ -34,6 +34,33 @@ const commands = [
             },
         ],
     },
+    {
+        name: 'rps',
+        description: "Play rock, paper, scissors with Kai'sa.",
+        options: [ 
+            {
+            name: 'move',
+            description: 'Choose your move!',
+            type: ApplicationCommandOptionType.String,
+            required: true,
+            choices: [
+                {
+                    name: 'rock',
+                    value: 'rock',
+                },
+                {
+                    name: 'paper',
+                    value: 'paper',
+                },
+                {
+                    name: 'scissors',
+                    value: 'scissors',
+                },
+            ],
+            },
+        ],
+    },
+    
 ];
 
 const rest = new REST({Version: '10'}).setToken(process.env.TOKEN);
