@@ -49,6 +49,34 @@ client.on("interactionCreate", (interaction) => {
         interaction.reply("https://tracker.gg/lol/profile/riot/NA/" + summoner + "/");
         console.log(summoner);
     }
+    if (interaction.commandName == "rps") {
+        choice = interaction.options.get('move').value;
+        kMove = Math.floor(Math.random()*3);
+         // 0 = rock, 1 = paper, 2 = scissors
+        kChoice = "n/a";
+        if (kMove == 0){
+            kChoice = 'rock';
+        }
+        else if (kMove == 1) {
+            kChoice = 'paper';
+        }
+        else {
+            kChoice = 'scissors';
+        }
+        result = "n/a";
+
+        if ((kMove == 0 && choice == 'scissors') || (kMove == 1 && choice == 'rock') || (kMove == 2 && choice == 'paper')) {
+            result = "I win!";
+        }
+        else if ((kMove == 0 && choice == 'paper') || (kMove == 1 && choice == 'scissors') || (kMove == 2 && choice == 'rock')) {
+            result = "You win!";
+        }
+        else {
+            result = "Tie!"
+        }
+        interaction.reply("You chose: " + choice + "\nI chose: " + kChoice + "\n" + result);
+
+    }
     console.log(interaction.commandName);
 });
 
