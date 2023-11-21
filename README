@@ -1,0 +1,8 @@
+Here is the code to a personal Discord bot I have been making. It is made in JavaScript and themed on the character Kai'sa from League of Legends. As of 11/20/2023 it can do five things:
+
+- Say "Hey!"
+- Say a quote from the game.
+- Play rock, paper, scissors
+- Link to a champion's build from u.gg
+- Link to a player's tracker.gg stats
+
