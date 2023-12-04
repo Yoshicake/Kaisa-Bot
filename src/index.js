@@ -43,10 +43,15 @@ client.on("interactionCreate", (interaction) => {
         interaction.reply("https://u.gg/lol/champions/" + champ + "/build");
         console.log(champ);
     }
-    if (interaction.commandName == "track") {
+    if (interaction.commandName == "league") {
         let summoner = interaction.options.get('username').value;
         summoner = summoner.split(" ").join("%20");
-        interaction.reply("https://tracker.gg/lol/profile/riot/NA/" + summoner + "/");
+        tagVal = interaction.options.get('tag').value;
+
+        interaction.reply("https://tracker.gg/lol/profile/riot/" + 
+            interaction.options.get('region').value + "/"+ summoner + 
+            "%23" + interaction.options.get('tag').value + "/");
+        
         console.log(summoner);
     }
     if (interaction.commandName == "rps") {
@@ -76,6 +81,26 @@ client.on("interactionCreate", (interaction) => {
         }
         interaction.reply("You chose: " + choice + "\nI chose: " + kChoice + "\n" + result);
 
+    }
+    if (interaction.commandName == "flip") {
+        choice = interaction.options.get('move').value;
+        kMove = Math.floor(Math.random()*2);
+        value = "n/a";
+        if (kMove == 0) {
+            value = "heads";
+        } else {
+            value = "tails";
+        }
+        if (value == choice) {
+            interaction.reply("You chose: " + choice + "\nThe coin was: " + value + '\nYou win!');
+        }
+        else {
+            interaction.reply("You chose: " + choice + "\nThe coin was: " + value + '\nBetter luck next time!');
+        }
+        
+    }
+    if (interaction.commandName == "fortnite") {
+        interaction.reply("https://fortnitetracker.com/profile/all/" + interaction.options.get('username').value);
     }
     console.log(interaction.commandName);
 });
