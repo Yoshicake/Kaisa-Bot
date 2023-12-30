@@ -1,6 +1,6 @@
 require("dotenv").config();
 
-const { Client, IntentsBitField} = require('discord.js');
+const { Client, IntentsBitField, ActivityType} = require('discord.js');
 
 const client = new Client({
     intents: [
@@ -12,9 +12,13 @@ const client = new Client({
 
 });
 
-
 client.on("ready", (c) => {
     console.log(`${c.user.tag} is online.`);
+
+    client.user.setActivity({
+        name: 'Summoner\'s Rift',
+        type: ActivityType.Competing,
+    })
 });
 
 client.on("messageCreate", (message) => {
