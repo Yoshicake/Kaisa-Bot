@@ -16,8 +16,9 @@ client.on("ready", (c) => {
     console.log(`${c.user.tag} is online.`);
 
     client.user.setActivity({
-        name: 'Summoner\'s Rift',
-        type: ActivityType.Competing,
+        name: 'a song',
+        type: ActivityType.Streaming,
+        url: 'https://www.youtube.com/watch?v=UOxkGD8qRB4',
     })
 });
 
