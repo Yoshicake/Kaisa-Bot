@@ -127,6 +127,25 @@ const commands = [
             }
         ]
     },
+    { 
+        name: 'valorant',
+        description: 'Sends a link to a user\'s tracker.gg profile.',
+        options: [
+            {
+                name: 'username',
+                description: 'User you want to search up.',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            },
+            {
+                name: 'tag',
+                description: 'Tag of the user.',
+                type: ApplicationCommandOptionType.String,
+                required: true,
+            },
+
+        ],
+    },
     {
         name: 'rps',
         description: "Play rock, paper, scissors with Kai'sa.",
@@ -175,6 +194,7 @@ const commands = [
             },
         ],
     },
+    
     
 ];
 
